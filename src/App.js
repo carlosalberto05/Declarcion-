@@ -3,12 +3,20 @@ import './App.css'
 
 function App() {
   const [cantidad, setCantidad] = useState(0)
+  const [resultado, setResultado] = useState(null)
+
+  const handleChange = (e) => {
+    e.preventDefault()
+    setCantidad(e.target.value)
+  }
 
   const subtotal = (e) => {
     e.preventDefault()
     if (cantidad > 0) {
       let sub = cantidad / 1.16
-      return sub.toFixed(2)
+      setResultado(sub.toFixed(2))
+    } else {
+      return 'No hay datos suficientes'
     }
   }
 
@@ -20,10 +28,13 @@ function App() {
           type="number"
           placeholder="cantidad"
           value={cantidad}
-          onChange={(e) => setCantidad(e.target.value)}
+          onChange={handleChange}
         />
         <input type="submit" onClick={subtotal} />
       </form>
+      <div>
+        <h4>El subtotal es: {resultado}</h4>
+      </div>
     </div>
   )
 }
