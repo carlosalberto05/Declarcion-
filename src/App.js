@@ -1,15 +1,13 @@
 import React, { useState } from 'react'
-import './App.css'
+import Formu from './components/Formu'
+import Resultado from './components/Resultado'
+import Encabezado from './components/Encabezado'
+import Footer from './components/Footer'
 
 function App() {
   const [cantidad, setCantidad] = useState(0)
   const [subtotal, setSubtotal] = useState(null)
   const [totalIva, setTotalIva] = useState(null)
-
-  const handleChange = (e) => {
-    e.preventDefault()
-    setCantidad(e.target.value)
-  }
 
   const calculo = (e) => {
     e.preventDefault()
@@ -25,20 +23,10 @@ function App() {
 
   return (
     <div className="App">
-      <header>Declaración bimestral</header>
-      <form>
-        <input
-          type="number"
-          placeholder="cantidad"
-          value={cantidad}
-          onChange={handleChange}
-        />
-        <input type="submit" onClick={calculo} />
-      </form>
-      <div>
-        <h4>El subtotal es: {subtotal}</h4>
-        <h4>El iva es: {totalIva}</h4>
-      </div>
+      <Encabezado />
+      <Formu cantidad={cantidad} calculo={calculo} setCantidad={setCantidad} />
+      <Resultado subtotal={subtotal} totalIva={totalIva} />
+      <Footer />
     </div>
   )
 }
