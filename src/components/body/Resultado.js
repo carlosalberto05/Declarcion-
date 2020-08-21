@@ -1,5 +1,5 @@
 import React from 'react'
-import calculadora from '../assets/calculadora.png'
+import calculadora from '../../assets/calculadora.png'
 
 export default function Resultado(props) {
   const { subtotal, totalIva } = props
