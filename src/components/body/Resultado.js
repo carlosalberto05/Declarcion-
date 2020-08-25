@@ -1,5 +1,4 @@
 import React from 'react'
-import calculadora from '../assets/calculadora.png'
 
 export default function Resultado(props) {
   const { subtotal, totalIva } = props
@@ -7,8 +6,6 @@ export default function Resultado(props) {
     <div>
       <h4>El subtotal es: {subtotal}</h4>
       <h4>El iva es: {totalIva}</h4>
-      <p>La calculdaora </p>
-      <img src={calculadora} alt="calculadora"></img>
     </div>
   )
 }
