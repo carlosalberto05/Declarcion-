@@ -20,7 +20,7 @@ export default function Section() {
   }
 
   return (
-    <div>
+    <div className="container mt-5">
       <Formu cantidad={cantidad} calculo={calculo} setCantidad={setCantidad} />
       <Resultado subtotal={subtotal} totalIva={totalIva} />
     </div>

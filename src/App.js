@@ -1,17 +1,15 @@
 import React from 'react'
 import Encabezado from './components/Encabezado'
 import Section from './components/body/Section'
-import Footer from './components/Footer'
-import Formulario from './components/Formulario'
+import Principal from './components/crud/Principal'
 
 function App() {
   return (
     <div className="App">
-      <div className="container mt-5">
+      <div>
         <Encabezado />
         <Section />
-        <Footer />
-        <Formulario />
+        <Principal />
       </div>
     </div>
   )
