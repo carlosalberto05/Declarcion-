@@ -9,14 +9,17 @@ export default function Formu(props) {
   }
 
   return (
-    <form>
+    <form onSubmit={calculo} className="d-flex justify-content-end mt-5 ">
       <input
         type="number"
         placeholder="Ingresa una cantidad"
         value={cantidad}
         onChange={handleChange}
+        className="mr-4 text-right"
       />
-      <input type="submit" onClick={calculo} />
+      <button className="btn btn-primary " type="submit">
+        Enviar
+      </button>
     </form>
   )
 }
